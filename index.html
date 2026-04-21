@@ -7,7 +7,7 @@
     <meta name="description" content="אלי גרוניך — ייעוץ תזונה מותאם אישית, מבוסס מדע. גישה מקצועית, ליווי צמוד, תוצאות שנשארות.">
 
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://management-dashboard-248948614304.me-west1.run.app; frame-src 'none'; object-src 'none'; base-uri 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cookie-consent.css">
 </head>
 <body>
 
@@ -708,6 +709,10 @@
                 <span class="footer-bottom-dot"></span>
                 <a href="accessibility.html">הצהרת נגישות</a>
                 <span class="footer-bottom-dot"></span>
+                <a href="cookies.html">מדיניות עוגיות</a>
+                <span class="footer-bottom-dot"></span>
+                <a href="javascript:void(0)" onclick="openCookieSettings()">הגדרות עוגיות</a>
+                <span class="footer-bottom-dot"></span>
                 <span class="footer-credit">Built and designed by <a href="https://digitalcraft.co.il/" target="_blank" rel="noopener noreferrer" class="footer-dc">DigitalCraft</a></span>
             </div>
         </div>
@@ -757,6 +762,7 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="tracking.js"></script>
+    <!-- tracking.js loaded by cookie-consent after user approval -->
+    <script src="cookie-consent.js"></script>
 </body>
 </html>

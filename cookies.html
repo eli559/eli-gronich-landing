@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>מדיניות עוגיות | אלי גרוניך</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-page { min-height: 100vh; padding: 120px 0 80px; }
+        .legal-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--accent); margin-bottom: 40px; transition: opacity 0.3s; opacity: 0.7; }
+        .legal-back:hover { opacity: 1; }
+        .legal-title { font-family: var(--font-hebrew); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; margin-bottom: 16px; }
+        .legal-date { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 48px; }
+        .legal-section { margin-bottom: 36px; }
+        .legal-section h2 { font-family: var(--font-hebrew); font-size: 1.1rem; font-weight: 400; color: var(--text); margin-bottom: 12px; }
+        .legal-section p { font-size: 0.88rem; color: var(--text-secondary); line-height: 2; font-weight: 300; }
+        .legal-section ul { list-style: none; padding: 0; }
+        .legal-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 2; font-weight: 300; padding-right: 16px; position: relative; }
+        .legal-section li::before { content: '—'; position: absolute; right: 0; color: var(--accent); opacity: 0.4; }
+        .legal-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .legal-table th, .legal-table td { text-align: right; padding: 10px 12px; font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .legal-table th { color: var(--accent); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.05em; }
+        .legal-table td { color: var(--text-secondary); font-weight: 300; }
+    </style>
+</head>
+<body>
+    <div class="legal-page">
+        <div class="container">
+            <a href="index.html" class="legal-back">← חזרה לאתר</a>
+            <h1 class="legal-title">מדיניות עוגיות</h1>
+            <p class="legal-date">עודכן לאחרונה: אפריל 2026</p>
+
+            <div class="legal-section">
+                <h2>מה הן עוגיות?</h2>
+                <p>
+                    עוגיות (Cookies) הן קבצים קטנים שנשמרים במכשיר שלך כשאתה גולש באתר.
+                    הן עוזרות לאתר לזכור העדפות ולשפר את חוויית השימוש.
+                    באתר זה אנו משתמשים גם ב-sessionStorage — אחסון זמני שנמחק כשסוגרים את הדפדפן.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>סוגי העוגיות באתר</h2>
+                <table class="legal-table">
+                    <tr>
+                        <th>קטגוריה</th>
+                        <th>מה עושה</th>
+                        <th>חיוני?</th>
+                        <th>משך</th>
+                    </tr>
+                    <tr>
+                        <td>עוגיות חיוניות</td>
+                        <td>שמירת העדפת הסכמה לעוגיות, תפקוד בסיסי</td>
+                        <td>כן</td>
+                        <td>עד שנה</td>
+                    </tr>
+                    <tr>
+                        <td>אנליטיקה</td>
+                        <td>מעקב אנונימי: עמודים שנצפו, זמן שהייה, סוג מכשיר, לחיצות</td>
+                        <td>לא</td>
+                        <td>סשן בלבד</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="legal-section">
+                <h2>שירותי צד שלישי</h2>
+                <ul>
+                    <li><strong>Google Fonts</strong> — טעינת פונטים לעיצוב האתר. לא אוסף מידע אישי.</li>
+                    <li><strong>מערכת אנליטיקה של DigitalCraft</strong> — איסוף נתוני שימוש אנונימיים (page views, clicks, scroll depth). לא נאסף מידע מזהה אישית. נטענת רק לאחר הסכמה.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>מה נאסף באנליטיקה</h2>
+                <ul>
+                    <li>עמודים שנצפו</li>
+                    <li>לחיצות על כפתורים וקישורים</li>
+                    <li>עומק גלילה</li>
+                    <li>זמן שהייה בעמוד</li>
+                    <li>סוג מכשיר ודפדפן</li>
+                    <li>מקור הגעה כללי</li>
+                </ul>
+                <p>
+                    המידע אנונימי ולא מזהה אותך באופן אישי.
+                    לא נאספים שמות, מיילים, מספרי טלפון או כל מידע מזהה.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>שליטה בעוגיות</h2>
+                <p>
+                    בכניסה הראשונה לאתר תוצג לך הודעה עם אפשרות לאשר או לדחות עוגיות לא חיוניות.
+                    ניתן בכל עת לשנות את ההעדפות דרך הקישור "הגדרות עוגיות" בתחתית כל עמוד באתר.
+                </p>
+                <p>
+                    בנוסף, ניתן למחוק עוגיות ישירות מהגדרות הדפדפן שלך.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>גורמים אחראיים</h2>
+                <p>
+                    התוכן המקצועי והשירות ניתנים על ידי אלי גרוניך.
+                    המערכת הטכנית, הפיתוח ואיסוף הנתונים מנוהלים על ידי
+                    <a href="https://digitalcraft.co.il/" target="_blank" style="color: #00CED1;">DigitalCraft</a>.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>יצירת קשר</h2>
+                <p>
+                    לשאלות בנושא עוגיות ופרטיות, ניתן לפנות ישירות דרך WhatsApp, טלפון או מייל כפי שמופיע באתר.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -61,7 +61,8 @@ function send(eventName, metadata) {
 
 send('page_view', {
   url: window.location.href,
-  screen: window.innerWidth + 'x' + window.innerHeight
+  screen: window.innerWidth + 'x' + window.innerHeight,
+  ua: navigator.userAgent.substring(0, 200)
 });
 
 // ══════════════════════════════════════════
