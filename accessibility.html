@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>הצהרת נגישות | אלי גרוניך</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-page { min-height: 100vh; padding: 120px 0 80px; }
+        .legal-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--accent); margin-bottom: 40px; transition: opacity 0.3s; opacity: 0.7; }
+        .legal-back:hover { opacity: 1; }
+        .legal-title { font-family: var(--font-hebrew); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; margin-bottom: 16px; }
+        .legal-date { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 48px; }
+        .legal-section { margin-bottom: 36px; }
+        .legal-section h2 { font-family: var(--font-hebrew); font-size: 1.1rem; font-weight: 400; color: var(--text); margin-bottom: 12px; }
+        .legal-section p { font-size: 0.88rem; color: var(--text-secondary); line-height: 2; font-weight: 300; }
+        .legal-section ul { list-style: none; padding: 0; }
+        .legal-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 2; font-weight: 300; padding-right: 16px; position: relative; }
+        .legal-section li::before { content: '—'; position: absolute; right: 0; color: var(--accent); opacity: 0.4; }
+    </style>
+</head>
+<body>
+    <div class="legal-page">
+        <div class="container">
+            <a href="index.html" class="legal-back">← חזרה לאתר</a>
+            <h1 class="legal-title">הצהרת נגישות</h1>
+            <p class="legal-date">עודכן לאחרונה: אפריל 2026</p>
+
+            <div class="legal-section">
+                <h2>מחויבות לנגישות</h2>
+                <p>
+                    אלי גרוניך מחויב להנגשת האתר לכלל האוכלוסייה, לרבות אנשים עם מוגבלויות.
+                    האתר נבנה ומתוחזק על ידי DigitalCraft בהתאם לתקנות שוויון זכויות לאנשים
+                    עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013,
+                    ובהתאם להנחיות WCAG 2.1 ברמת AA.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>התאמות הנגישות באתר</h2>
+                <p>האתר כולל את ההתאמות הבאות:</p>
+                <ul>
+                    <li>כפתור נגישות קבוע המאפשר שינוי גודל טקסט, ניגודיות, גווני אפור, הדגשת קישורים ופונט קריא</li>
+                    <li>מבנה HTML סמנטי עם תגיות role ו-aria-label לכל האלמנטים המרכזיים</li>
+                    <li>ניגודיות גבוהה בין טקסט לרקע בכל חלקי האתר</li>
+                    <li>תמיכה בניווט מקלדת</li>
+                    <li>אזורי לחיצה מוגדלים (מינימום 44px) לנוחות שימוש במובייל</li>
+                    <li>תמונות עם תיאור טקסט חלופי (alt)</li>
+                    <li>תאימות מלאה למובייל, טאבלט ומחשב</li>
+                    <li>תאימות לדפדפנים מובילים: Chrome, Safari, Firefox</li>
+                    <li>התאמה למכשירי iPhone ו-Android כולל אזורי בטיחות (safe areas)</li>
+                    <li>אנימציות קלות שאינן פוגעות בביצועים או בנוחות הצפייה</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>טכנולוגיות</h2>
+                <p>
+                    האתר נבנה באמצעות HTML, CSS ו-JavaScript סטנדרטיים,
+                    ללא תלות בספריות חיצוניות. הנגישות מיושמת ישירות בקוד
+                    ולא דרך תוסף חיצוני, מה שמבטיח ביצועים ויציבות.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>דיווח על בעיית נגישות</h2>
+                <p>
+                    אם נתקלתם בבעיית נגישות באתר, נשמח לשמוע ולטפל.
+                    ניתן לפנות ישירות לאלי גרוניך דרך WhatsApp, טלפון או מייל
+                    כפי שמופיע באתר.
+                    לפניות הנוגעות לתשתית הטכנית של האתר, ניתן לפנות ל-<a href="https://digitalcraft.co.il/" target="_blank" style="color: #00CED1;">DigitalCraft</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
