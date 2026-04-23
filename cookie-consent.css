@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     z-index: 99999;
-    background: #0B1220;
+    background: #FFFFFF;
     border-top: 1px solid rgba(0, 194, 168, 0.15);
     box-shadow: 0 -4px 30px rgba(0,0,0,0.5);
     animation: ccSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,7 +47,7 @@
 
 .cc-text p {
     font-size: 0.82rem;
-    color: #bbb;
+    color: #64748B;
     line-height: 1.7;
     margin: 0;
     font-weight: 300;
@@ -86,14 +86,14 @@
 
 .cc-btn--accept {
     background: #00C2A8;
-    color: #0B1220;
+    color: #FFFFFF;
 }
 
 .cc-btn--accept:hover { background: #009E8E; }
 
 .cc-btn--reject {
     background: transparent;
-    color: #bbb;
+    color: #64748B;
     border: 1px solid rgba(255,255,255,0.12);
 }
 
@@ -101,14 +101,14 @@
 
 .cc-btn--manage {
     background: transparent;
-    color: #888;
+    color: #94A3B8;
     border: none;
     text-decoration: underline;
     padding: 10px 12px;
     font-size: 0.75rem;
 }
 
-.cc-btn--manage:hover { color: #bbb; }
+.cc-btn--manage:hover { color: #64748B; }
 
 /* Preferences Panel */
 .cc-prefs {
@@ -124,7 +124,7 @@
 .cc-prefs-title {
     font-size: 0.88rem;
     font-weight: 500;
-    color: #eee;
+    color: #0F172A;
     margin-bottom: 16px;
 }
 
@@ -145,13 +145,13 @@
 
 .cc-pref-info strong {
     font-size: 0.82rem;
-    color: #ddd;
+    color: #0F172A;
     font-weight: 500;
 }
 
 .cc-pref-info span {
     font-size: 0.72rem;
-    color: #777;
+    color: #94A3B8;
     font-weight: 300;
 }
 
@@ -161,7 +161,7 @@
     appearance: none;
     width: 40px;
     height: 22px;
-    background: #1C2538;
+    background: #F1F5F9;
     border-radius: 11px;
     position: relative;
     cursor: pointer;
@@ -183,12 +183,12 @@
 }
 
 .cc-toggle:checked { background: #00C2A8; }
-.cc-toggle:checked::before { right: 21px; background: #0B1220; }
+.cc-toggle:checked::before { right: 21px; background: #FFFFFF; }
 .cc-toggle:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .cc-btn--save {
     background: #00C2A8;
-    color: #0B1220;
+    color: #FFFFFF;
     margin-top: 16px;
     width: 100%;
 }
