@@ -305,12 +305,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ===================== ABOUT ===================== */
 .about {
     background:
-        /* Warm environment around the image area */
-        radial-gradient(ellipse 60% 70% at 35% 50%, rgba(212, 168, 67, 0.02) 0%, transparent 55%),
-        /* Neutral depth center */
-        radial-gradient(ellipse 80% 80% at 40% 45%, rgba(255,255,255,0.012) 0%, transparent 50%),
-        /* Base tone shift */
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 12%, var(--bg-warm) 55%, var(--bg-elevated) 100%);
+        radial-gradient(ellipse 50% 60% at 35% 50%, rgba(255,255,255,0.01) 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 15%, var(--bg-warm) 55%, var(--bg-elevated) 100%);
     overflow: visible;
     padding-top: clamp(60px, 8vw, 120px);
 }
@@ -331,17 +327,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     z-index: 1;
 }
 
-/* Wide ambient haze — makes the photo area feel like part of the environment */
+/* Subtle depth — barely visible, just enough to lift the image area */
 .about-image::before {
     content: '';
     position: absolute;
-    top: -15%;
-    left: -25%;
-    width: 150%;
-    height: 130%;
-    background:
-        radial-gradient(ellipse 80% 70% at 55% 40%, rgba(255,255,255,0.02) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 50% at 45% 30%, rgba(212, 168, 67, 0.015) 0%, transparent 55%);
+    top: -5%;
+    left: -15%;
+    width: 130%;
+    height: 110%;
+    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,255,255,0.012) 0%, transparent 55%);
     pointer-events: none;
     z-index: 0;
 }
@@ -363,26 +357,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     z-index: 1;
     width: 100%;
     display: block;
-    filter: saturate(0.82) contrast(1.15) brightness(0.85);
-    mask-image:
-        linear-gradient(to bottom, transparent 0%, black 2%, black 50%, transparent 85%),
-        linear-gradient(to left, black 0%, black 80%, transparent 100%);
-    -webkit-mask-image:
-        linear-gradient(to bottom, transparent 0%, black 2%, black 50%, transparent 85%),
-        linear-gradient(to left, black 0%, black 80%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-composite: source-in;
+    filter: saturate(0.85) contrast(1.08) brightness(0.9);
+    mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 90%);
 }
 
-/* Environment blend — connects photo to surroundings */
+/* Environment blend */
 .about-photo-fade {
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 2;
-    background:
-        linear-gradient(to bottom, transparent 35%, rgba(17, 15, 12, 0.4) 65%, var(--bg-warm) 92%),
-        linear-gradient(to left, transparent 75%, var(--bg-warm) 100%);
+    background: linear-gradient(to bottom, transparent 45%, rgba(17, 15, 12, 0.35) 72%, var(--bg-warm) 95%);
 }
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 20px; font-weight: 400; }
 .about-content { position: relative; z-index: 2; }
