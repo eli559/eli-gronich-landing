@@ -317,16 +317,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .about-image {
     position: relative;
-    margin-top: -40px;
-    margin-bottom: -60px;
+    margin-top: -30px;
+    margin-bottom: -50px;
 }
 
 .about-photo {
     width: 100%;
     display: block;
-    filter: saturate(0.85) contrast(1.03) brightness(0.97);
-    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    filter: saturate(0.85) contrast(1.05) brightness(0.95);
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 5%, black 65%, transparent 95%),
+        linear-gradient(to right, transparent 0%, black 10%, black 100%);
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 5%, black 65%, transparent 95%),
+        linear-gradient(to right, transparent 0%, black 10%, black 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
 }
 
 .about-photo-fade {
@@ -334,15 +340,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     inset: 0;
     pointer-events: none;
     background:
-        linear-gradient(to left, transparent 60%, rgba(17, 15, 12, 0.6) 100%),
-        radial-gradient(ellipse 90% 80% at 50% 40%, transparent 55%, rgba(17, 15, 12, 0.5) 100%);
+        linear-gradient(to bottom, transparent 50%, var(--bg-warm) 100%),
+        linear-gradient(to left, transparent 70%, var(--bg-warm) 100%);
 }
 
 .about-photo-glow {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse 55% 45% at 50% 28%, rgba(255, 255, 255, 0.04) 0%, transparent 65%);
+    background: radial-gradient(ellipse 50% 40% at 50% 30%, rgba(212, 168, 67, 0.03) 0%, transparent 65%);
     mix-blend-mode: screen;
 }
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 24px; font-weight: 400; }
