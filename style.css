@@ -600,7 +600,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .ba-tag { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 0.5rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.85); background: rgba(240, 244, 248, 0.6); backdrop-filter: blur(6px); padding: 3px 10px; font-weight: 400; border-radius: 6px; white-space: nowrap; }
 
-.ba-train-label { font-size: 0.75rem; font-weight: 400; color: var(--accent); opacity: 0.7; text-align: center; white-space: nowrap; }
+.ba-train-label { display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
+.ba-label-type { font-size: 0.72rem; font-weight: 600; color: var(--text); letter-spacing: 0.02em; }
+.ba-label-result { font-size: 0.65rem; font-weight: 400; color: var(--accent); opacity: 0.75; }
+.ba-label-result strong { font-weight: 700; opacity: 1; font-size: 0.7rem; }
 
 .ba-gold { color: var(--accent); font-weight: 500; }
 
