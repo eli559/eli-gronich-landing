@@ -323,49 +323,53 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .about-image {
     position: relative;
     margin-top: -20px;
-    margin-bottom: -40px;
+    margin-bottom: -50px;
     z-index: 1;
-    max-width: 350px;
+    max-width: 340px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Drop shadow — soft, below the figure, creates floating depth */
+/* Ground shadow — figure stands ON the page */
 .about-photo-shadow {
     position: absolute;
-    bottom: -5%;
-    left: 15%;
-    width: 70%;
-    height: 25%;
-    background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,0.3) 0%, transparent 65%);
-    filter: blur(25px);
+    bottom: 2%;
+    left: 20%;
+    width: 60%;
+    height: 15%;
+    background: radial-gradient(ellipse 100% 100% at 50% 80%, rgba(0,0,0,0.35) 0%, transparent 70%);
+    filter: blur(20px);
     pointer-events: none;
     z-index: 0;
 }
 
-/* Rim light — behind the figure, directional from top-right */
+/* Warm rim — behind shoulders, separates from bg via light */
 .about-photo-rim {
     position: absolute;
-    top: -8%;
-    right: -12%;
-    width: 85%;
-    height: 60%;
-    background: radial-gradient(ellipse 100% 100% at 75% 15%, rgba(255,255,255,0.05) 0%, transparent 55%);
+    top: 5%;
+    right: -8%;
+    width: 80%;
+    height: 50%;
+    background: radial-gradient(ellipse 90% 90% at 70% 20%, rgba(212, 168, 67, 0.04) 0%, transparent 55%);
     pointer-events: none;
     z-index: 0;
 }
 
-/* The cutout figure — no box, no frame, lives on the page */
+/* Cutout figure — integrated into the design */
 .about-photo {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 320px;
+    max-width: 310px;
     display: block;
     margin: 0 auto;
-    filter: saturate(0.88) contrast(1.1) brightness(0.92) drop-shadow(0 8px 24px rgba(0,0,0,0.25));
-    mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 90%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 90%);
+    /* Color grade to match site palette */
+    filter: saturate(0.8) contrast(1.12) brightness(0.88) sepia(0.08)
+           drop-shadow(0 4px 16px rgba(0,0,0,0.2))
+           drop-shadow(0 12px 40px rgba(0,0,0,0.15));
+    /* Fade bottom into page */
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 88%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 88%);
 }
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 20px; font-weight: 400; }
 .about-content { position: relative; z-index: 2; }
