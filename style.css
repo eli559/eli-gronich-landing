@@ -429,8 +429,13 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     border-radius: 10px;
     overflow: hidden;
     background: var(--bg-card);
-    border: 1px solid rgba(0, 194, 168, 0.15);
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.4s var(--ease);
+}
+
+.my-transform-img:first-child {
+    box-shadow: 0 4px 20px rgba(0, 194, 168, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .my-transform-img img {
@@ -450,7 +455,25 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     background: radial-gradient(ellipse 95% 90% at 50% 45%, transparent 55%, var(--bg-elevated) 100%);
 }
 
-.my-transform-before {}
+.my-transform-before {
+    overflow: hidden;
+}
+
+.my-transform-before img {
+    filter: saturate(0.4) contrast(0.9) brightness(0.95);
+}
+
+/* Brand tint overlay on "before" */
+.my-transform-before::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 194, 168, 0.1);
+    mix-blend-mode: color;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: inherit;
+}
 .my-transform-after {}
 
 .my-transform-tag {
