@@ -321,16 +321,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     margin-bottom: -40px;
 }
 
-/* Depth layer — sits behind the photo */
-.about-image::before {
-    content: '';
+/* Rim light — directional light from top-right, sits BEHIND the photo */
+.about-photo-rim {
     position: absolute;
-    top: 10%;
-    left: -10%;
-    width: 120%;
-    height: 80%;
-    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,255,255,0.025) 0%, transparent 65%);
-    mix-blend-mode: screen;
+    top: -8%;
+    right: -12%;
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse 100% 100% at 70% 20%, rgba(255,255,255,0.045) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
 }
@@ -340,45 +338,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     z-index: 1;
     width: 100%;
     display: block;
-    filter: saturate(0.88) contrast(1.06) brightness(0.93);
-    mask-image:
-        linear-gradient(to bottom, transparent 0%, black 3%, black 60%, transparent 92%),
-        linear-gradient(to right, transparent 0%, black 8%, black 90%, transparent 100%);
-    -webkit-mask-image:
-        linear-gradient(to bottom, transparent 0%, black 3%, black 60%, transparent 92%),
-        linear-gradient(to right, transparent 0%, black 8%, black 90%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-composite: source-in;
+    filter: saturate(0.85) contrast(1.12) brightness(0.88);
+    mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 88%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 88%);
 }
 
-/* Bottom + side blend into section bg */
+/* Atmospheric blend — NOT a frame, just environment */
 .about-photo-fade {
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 2;
     background:
-        /* Bottom heavy fade */
-        linear-gradient(to bottom, transparent 40%, rgba(17, 15, 12, 0.3) 70%, var(--bg-warm) 95%),
-        /* Left side fade (RTL: text side) */
-        linear-gradient(to left, transparent 65%, rgba(17, 15, 12, 0.4) 100%),
-        /* Top subtle fade */
-        linear-gradient(to bottom, rgba(17, 15, 12, 0.2) 0%, transparent 10%),
-        /* Soft vignette */
-        radial-gradient(ellipse 85% 80% at 50% 40%, transparent 50%, rgba(17, 15, 12, 0.25) 100%);
-}
-
-/* Warm backlight behind shoulders */
-.about-photo-glow {
-    position: absolute;
-    top: 5%;
-    left: -5%;
-    width: 110%;
-    height: 70%;
-    pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 35%, rgba(212, 168, 67, 0.025) 0%, transparent 60%);
-    mix-blend-mode: screen;
+        /* Bottom: deep merge into bg */
+        linear-gradient(to bottom, transparent 45%, rgba(17, 15, 12, 0.5) 75%, var(--bg-warm) 100%),
+        /* Vignette: soft, wide, barely there */
+        radial-gradient(ellipse 95% 90% at 50% 35%, transparent 55%, rgba(17, 15, 12, 0.2) 100%);
 }
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 24px; font-weight: 400; }
 .about-text { color: var(--text-secondary); line-height: 2; margin-bottom: 44px; font-weight: 300; font-size: 0.92rem; }
