@@ -375,6 +375,29 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
 }
+
+/* Film grain over the figure — removes digital feel */
+.about-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 88%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 88%);
+}
+
+/* Vignette — darkens outer edges, focuses attention center */
+.about-photo-rim::after {
+    content: '';
+    position: absolute;
+    inset: -10%;
+    background: radial-gradient(ellipse 70% 65% at 50% 35%, transparent 45%, rgba(0,0,0,0.12) 100%);
+    pointer-events: none;
+}
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 20px; font-weight: 400; }
 .about-content { position: relative; z-index: 2; }
 .about-text { color: var(--text-secondary); line-height: 2; margin-bottom: 44px; font-weight: 300; font-size: 0.92rem; }
