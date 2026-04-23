@@ -618,14 +618,16 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ===================== VIDEOS ===================== */
 .videos {
-    background: var(--bg-deep);
+    background:
+        radial-gradient(ellipse 50% 50% at 50% 40%, rgba(0, 194, 168, 0.03) 0%, transparent 60%),
+        var(--bg-deep);
 }
 
 .video-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     max-width: 700px;
     margin: 0 auto;
 }
@@ -633,18 +635,26 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .video-row {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 16px;
 }
 
 .video-card {
     width: clamp(140px, 18vw, 200px);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.5s var(--ease);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s;
     flex-shrink: 0;
 }
 
-@media (hover: hover) { .video-card:hover { transform: scale(1.02); } }
+@media (hover: hover) {
+    .video-card:hover {
+        transform: scale(1.03);
+    }
+    .video-card:hover .video-wrap {
+        border-color: rgba(0, 194, 168, 0.25);
+        box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(0, 194, 168, 0.08);
+    }
+}
 
 .video-wrap {
     position: relative;
@@ -652,14 +662,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     background: var(--bg-card);
     cursor: pointer;
     overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 194, 168, 0.12);
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
-    transition: border-color 0.5s, box-shadow 0.5s;
-}
-
-@media (hover: hover) {
-    .video-wrap:hover { border-color: rgba(0, 194, 168, 0.22); box-shadow: 0 6px 24px rgba(0,0,0,0.35); }
+    border-radius: 12px;
+    border: 1px solid rgba(0, 194, 168, 0.1);
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s var(--ease);
 }
 
 .video-wrap video {
@@ -674,40 +680,49 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .video-wrap video::-webkit-media-controls { display: none; }
 
+/* Color-unifying overlay */
 .video-overlay {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(240, 244, 248, 0.35);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.2) 100%);
     cursor: pointer;
     z-index: 2;
     transition: background 0.4s;
 }
 
-.video-overlay:hover { background: rgba(240, 244, 248, 0.2); }
+.video-overlay:hover { background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.1) 100%); }
 
+/* Play button — branded circle */
 .video-play {
-    color: rgba(255,255,255,0.7);
-    filter: drop-shadow(0 1px 4px rgba(15, 23, 42, 0.06));
+    width: 40px;
+    height: 40px;
+    color: #FFFFFF;
+    filter: drop-shadow(0 2px 8px rgba(15, 23, 42, 0.15));
     transition: transform 0.4s var(--ease), color 0.4s;
 }
 
+.video-play circle { stroke: rgba(0, 194, 168, 0.5); }
+.video-play path { fill: rgba(255,255,255,0.9); }
+
 .video-overlay:hover .video-play {
-    transform: scale(1.06);
-    color: var(--accent);
+    transform: scale(1.1);
 }
+
+.video-overlay:hover .video-play circle { stroke: rgba(0, 194, 168, 0.8); }
 
 @media (max-width: 480px) {
     .video-card { width: clamp(90px, 26vw, 120px); }
     .video-grid { gap: 10px; }
     .video-row { gap: 10px; }
+    .video-play { width: 28px; height: 28px; }
 }
 
 @media (hover: none) {
     .video-card:hover { transform: none; }
-    .video-play { color: var(--accent); }
+    .video-play circle { stroke: rgba(0, 194, 168, 0.6); }
 }
 
 
