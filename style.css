@@ -322,9 +322,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .about-image {
     position: relative;
-    margin-top: -30px;
-    margin-bottom: -50px;
+    margin-top: -20px;
+    margin-bottom: -40px;
     z-index: 1;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Drop shadow — soft, below the figure, creates floating depth */
@@ -357,12 +360,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 380px;
+    max-width: 320px;
     display: block;
     margin: 0 auto;
     filter: saturate(0.88) contrast(1.1) brightness(0.92) drop-shadow(0 8px 24px rgba(0,0,0,0.25));
-    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 95%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 95%);
+    mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 90%);
 }
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 20px; font-weight: 400; }
 .about-content { position: relative; z-index: 2; }
