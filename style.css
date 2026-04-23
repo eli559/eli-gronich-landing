@@ -800,7 +800,7 @@ body.modal-open { overflow: hidden; }
 .philosophy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 40px); }
 .philosophy-card { background: rgba(255,255,255,0.015); padding: clamp(36px, 4vw, 60px); transition: background 0.6s var(--ease), border-color 0.6s; border: 1px solid rgba(255,255,255,0.03); }
 .philosophy-card:hover { background: rgba(255,255,255,0.025); border-color: rgba(255,255,255,0.06); }
-.card-number { font-family: var(--font-serif); font-size: 1.1rem; color: var(--accent); opacity: 0.6; font-weight: 400; letter-spacing: 0.1em; margin-bottom: 28px; }
+.card-number { font-family: var(--font-serif); font-size: 1.3rem; color: var(--accent); opacity: 1; font-weight: 500; letter-spacing: 0.12em; margin-bottom: 28px; }
 .card-line { width: 32px; height: 1px; background: linear-gradient(to left, var(--accent), var(--accent-light)); margin-bottom: 28px; opacity: 0.45; box-shadow: 0 0 8px rgba(194, 166, 110, 0.08); transition: width 0.6s var(--ease), opacity 0.6s, box-shadow 0.6s; }
 .philosophy-card:hover .card-line { width: 48px; opacity: 0.7; box-shadow: 0 0 12px rgba(194, 166, 110, 0.12); }
 .card-title { font-family: var(--font-hebrew); font-size: 1.25rem; font-weight: 400; margin-bottom: 18px; color: var(--text-high); line-height: 1.3; }
