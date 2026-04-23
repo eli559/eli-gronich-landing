@@ -305,30 +305,55 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ===================== ABOUT ===================== */
 .about {
     background:
-        radial-gradient(ellipse 45% 60% at 85% 45%, rgba(194, 166, 110, 0.035) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,255,255,0.015) 0%, transparent 60%),
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 15%, var(--bg-warm) 60%, var(--bg-elevated) 100%);
-    overflow: hidden;
+        /* Warm environment around the image area */
+        radial-gradient(ellipse 60% 70% at 35% 50%, rgba(212, 168, 67, 0.02) 0%, transparent 55%),
+        /* Neutral depth center */
+        radial-gradient(ellipse 80% 80% at 40% 45%, rgba(255,255,255,0.012) 0%, transparent 50%),
+        /* Base tone shift */
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 12%, var(--bg-warm) 55%, var(--bg-elevated) 100%);
+    overflow: visible;
     padding-top: clamp(60px, 8vw, 120px);
 }
 
 .watermark { position: absolute; top: 50%; left: -6%; transform: translateY(-50%); font-family: var(--font-serif); font-size: clamp(16rem, 26vw, 24rem); font-weight: 400; color: var(--accent); opacity: 0.008; letter-spacing: 0.1em; line-height: 1; pointer-events: none; user-select: none; will-change: transform; transition: none; }
-.about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+}
 
 .about-image {
     position: relative;
-    margin-top: -20px;
-    margin-bottom: -40px;
+    margin-top: -40px;
+    margin-bottom: -60px;
+    z-index: 1;
 }
 
-/* Rim light — directional light from top-right, sits BEHIND the photo */
+/* Wide ambient haze — makes the photo area feel like part of the environment */
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: -25%;
+    width: 150%;
+    height: 130%;
+    background:
+        radial-gradient(ellipse 80% 70% at 55% 40%, rgba(255,255,255,0.02) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 50% at 45% 30%, rgba(212, 168, 67, 0.015) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Rim light — directional, from top-right */
 .about-photo-rim {
     position: absolute;
-    top: -8%;
-    right: -12%;
-    width: 80%;
-    height: 60%;
-    background: radial-gradient(ellipse 100% 100% at 70% 20%, rgba(255,255,255,0.045) 0%, transparent 65%);
+    top: -10%;
+    right: -15%;
+    width: 90%;
+    height: 65%;
+    background: radial-gradient(ellipse 100% 100% at 75% 15%, rgba(255,255,255,0.04) 0%, transparent 60%);
     pointer-events: none;
     z-index: 0;
 }
@@ -338,24 +363,29 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     z-index: 1;
     width: 100%;
     display: block;
-    filter: saturate(0.85) contrast(1.12) brightness(0.88);
-    mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 88%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 88%);
+    filter: saturate(0.82) contrast(1.15) brightness(0.85);
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 2%, black 50%, transparent 85%),
+        linear-gradient(to left, black 0%, black 80%, transparent 100%);
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 2%, black 50%, transparent 85%),
+        linear-gradient(to left, black 0%, black 80%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
 }
 
-/* Atmospheric blend — NOT a frame, just environment */
+/* Environment blend — connects photo to surroundings */
 .about-photo-fade {
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 2;
     background:
-        /* Bottom: deep merge into bg */
-        linear-gradient(to bottom, transparent 45%, rgba(17, 15, 12, 0.5) 75%, var(--bg-warm) 100%),
-        /* Vignette: soft, wide, barely there */
-        radial-gradient(ellipse 95% 90% at 50% 35%, transparent 55%, rgba(17, 15, 12, 0.2) 100%);
+        linear-gradient(to bottom, transparent 35%, rgba(17, 15, 12, 0.4) 65%, var(--bg-warm) 92%),
+        linear-gradient(to left, transparent 75%, var(--bg-warm) 100%);
 }
-.about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 24px; font-weight: 400; }
+.about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 20px; font-weight: 400; }
+.about-content { position: relative; z-index: 2; }
 .about-text { color: var(--text-secondary); line-height: 2; margin-bottom: 44px; font-weight: 300; font-size: 0.92rem; }
 .about-credentials { display: flex; flex-direction: column; gap: 16px; }
 .credential { display: flex; align-items: center; gap: 14px; color: var(--text-secondary); font-size: 0.84rem; font-weight: 300; }
