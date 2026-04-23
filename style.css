@@ -288,8 +288,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .section-header.center { text-align: center; }
 .section-label { display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--accent); font-weight: 400; margin-bottom: 24px; opacity: 0.8; }
 .section-header.center .section-label { justify-content: center; }
-.label-line { width: 40px; height: 1px; background: linear-gradient(to left, rgba(0, 194, 168, 0.5), transparent); opacity: 1; box-shadow: 0 0 8px rgba(0, 194, 168, 0.08); }
-.label-line:first-child { background: linear-gradient(to right, rgba(0, 194, 168, 0.5), transparent); }
+.label-line { flex: 1; max-width: 180px; height: 1px; background: linear-gradient(to left, rgba(0, 194, 168, 0.4), rgba(0, 194, 168, 0.05)); opacity: 1; }
+.label-line:first-child { background: linear-gradient(to right, rgba(0, 194, 168, 0.4), rgba(0, 194, 168, 0.05)); }
 .section-title { font-family: var(--font-hebrew); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.25; letter-spacing: 0.01em; }
 .text-accent { color: var(--accent); }
 .section-subtitle { font-size: 0.92rem; color: var(--text-secondary); margin-top: 16px; font-weight: 300; line-height: 1.9; }
@@ -1037,8 +1037,13 @@ body.a11y-readable * { font-family: inherit !important; }
 
 
 /* ===================== GOLD LINE REVEAL ===================== */
-.card-line, .label-line { transform: scaleX(0); transform-origin: right; transition: transform 0.8s var(--ease), width 0.6s var(--ease), opacity 0.6s; }
-.card-line.revealed, .label-line.revealed { transform: scaleX(1); }
+.card-line { transform: scaleX(0); transform-origin: right; transition: transform 0.8s var(--ease), opacity 0.6s; }
+.card-line.revealed { transform: scaleX(1); }
+
+.label-line { transform: scaleX(0); transition: transform 1s var(--ease); }
+.label-line:first-child { transform-origin: left; }
+.label-line:last-child { transform-origin: right; }
+.label-line.revealed { transform: scaleX(1); }
 
 
 /* ===================== ANIMATIONS ===================== */
@@ -1134,6 +1139,7 @@ body.a11y-readable * { font-family: inherit !important; }
     .about-lead { font-size: 1.05rem; line-height: 1.9; }
     .about-text { font-size: 0.88rem; line-height: 2.1; }
     .section-label { justify-content: center; }
+    .label-line { max-width: 60px; }
 
     /* Transformations */
     .transformations-grid { grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 100%; }
