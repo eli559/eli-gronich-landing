@@ -322,53 +322,47 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .about-image {
     position: relative;
-    margin-top: -40px;
-    margin-bottom: -60px;
+    margin-top: -30px;
+    margin-bottom: -50px;
     z-index: 1;
 }
 
-/* Subtle depth — barely visible, just enough to lift the image area */
-.about-image::before {
-    content: '';
+/* Drop shadow — soft, below the figure, creates floating depth */
+.about-photo-shadow {
     position: absolute;
-    top: -5%;
-    left: -15%;
-    width: 130%;
-    height: 110%;
-    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,255,255,0.012) 0%, transparent 55%);
+    bottom: -5%;
+    left: 15%;
+    width: 70%;
+    height: 25%;
+    background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,0.3) 0%, transparent 65%);
+    filter: blur(25px);
     pointer-events: none;
     z-index: 0;
 }
 
-/* Rim light — directional, from top-right */
+/* Rim light — behind the figure, directional from top-right */
 .about-photo-rim {
     position: absolute;
-    top: -10%;
-    right: -15%;
-    width: 90%;
-    height: 65%;
-    background: radial-gradient(ellipse 100% 100% at 75% 15%, rgba(255,255,255,0.04) 0%, transparent 60%);
+    top: -8%;
+    right: -12%;
+    width: 85%;
+    height: 60%;
+    background: radial-gradient(ellipse 100% 100% at 75% 15%, rgba(255,255,255,0.05) 0%, transparent 55%);
     pointer-events: none;
     z-index: 0;
 }
 
+/* The cutout figure — no box, no frame, lives on the page */
 .about-photo {
     position: relative;
     z-index: 1;
     width: 100%;
+    max-width: 380px;
     display: block;
-    filter: saturate(0.85) contrast(1.08) brightness(0.9);
-    mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 90%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 90%);
-}
-
-/* Environment blend */
-.about-photo-fade {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-    background: linear-gradient(to bottom, transparent 45%, rgba(17, 15, 12, 0.35) 72%, var(--bg-warm) 95%);
+    margin: 0 auto;
+    filter: saturate(0.88) contrast(1.1) brightness(0.92) drop-shadow(0 8px 24px rgba(0,0,0,0.25));
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 95%);
 }
 .about-lead { font-family: var(--font-hebrew); font-size: 1.18rem; line-height: 1.85; color: var(--text-high); margin-bottom: 20px; font-weight: 400; }
 .about-content { position: relative; z-index: 2; }
