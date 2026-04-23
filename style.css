@@ -5,25 +5,29 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg-deep: #F0F4F8;
+    --bg-deep: #EEF2F7;
     --bg: #F7F9FC;
     --bg-elevated: #FFFFFF;
     --bg-card: #FFFFFF;
-    --bg-warm: #F3F6FA;
+    --bg-warm: #F1F5FA;
     --bg-light: #EDF1F7;
+    --bg-dark: #0F172A;
     --text: #0F172A;
-    --text-high: rgba(15, 23, 42, 0.95);
+    --text-high: #1E293B;
     --text-secondary: #64748B;
     --text-muted: #94A3B8;
     --accent: #00C2A8;
     --accent-light: #009E8E;
-    --border: rgba(0, 194, 168, 0.12);
-    --border-subtle: rgba(15, 23, 42, 0.06);
+    --accent-subtle: rgba(0, 194, 168, 0.08);
+    --border: rgba(15, 23, 42, 0.08);
+    --border-subtle: rgba(15, 23, 42, 0.04);
     --glow-accent: rgba(0, 194, 168, 0.06);
     --glow-neutral: rgba(15, 23, 42, 0.02);
-    --shadow-card: 0 2px 16px rgba(15, 23, 42, 0.06);
-    --shadow-card-hover: 0 8px 28px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(0, 194, 168, 0.08);
-    --gradient-accent: linear-gradient(135deg, #00C2A8, #009E8E);
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+    --shadow-card: 0 2px 16px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.03);
+    --shadow-card-hover: 0 8px 28px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(0, 194, 168, 0.1);
+    --gradient-accent: linear-gradient(135deg, #00C2A8, #00A896);
+    --gradient-hero: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-hebrew: 'Frank Ruhl Libre', 'Playfair Display', serif;
@@ -111,7 +115,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     justify-content: center;
     overflow: hidden;
     padding: 180px 28px 140px;
-    background: var(--bg-deep);
+    background: var(--gradient-hero);
 }
 
 .hero-bg { position: absolute; inset: 0; }
@@ -294,7 +298,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ===================== ABOUT ===================== */
 .about {
-    background: var(--bg);
+    background: var(--bg-elevated);
     overflow: visible;
     padding-top: clamp(60px, 8vw, 120px);
 }
@@ -376,9 +380,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ===================== TRANSFORMATIONS ===================== */
 .transformations {
-    background:
-        radial-gradient(ellipse 50% 45% at 50% 0%, rgba(255,255,255,0.025) 0%, transparent 55%),
-        linear-gradient(180deg, var(--bg-light) 0%, var(--bg-elevated) 100%);
+    background: var(--bg-deep);
 }
 
 .transformations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 960px; margin: 0 auto; }
@@ -401,9 +403,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ===================== MY TRANSFORMATION ===================== */
 .my-transform {
-    background:
-        radial-gradient(ellipse 50% 55% at 50% 50%, rgba(0, 194, 168, 0.025) 0%, transparent 60%),
-        var(--bg-elevated);
+    background: var(--bg);
 }
 
 .my-transform-scene {
@@ -517,7 +517,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ===================== BEFORE & AFTER ===================== */
 .before-after {
-    background: var(--bg);
+    background: var(--bg-elevated);
 }
 
 /* --- Train Marquee --- */
@@ -596,9 +596,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ===================== VIDEOS ===================== */
 .videos {
-    background:
-        radial-gradient(ellipse 50% 45% at 50% 20%, rgba(255,255,255,0.012) 0%, transparent 55%),
-        var(--bg);
+    background: var(--bg-deep);
 }
 
 .video-grid {
@@ -760,14 +758,12 @@ body.modal-open { overflow: hidden; }
 
 /* ===================== PHILOSOPHY ===================== */
 .philosophy {
-    background:
-        radial-gradient(ellipse 35% 45% at 75% 65%, rgba(255,255,255,0.02) 0%, transparent 55%),
-        var(--bg-deep);
+    background: var(--bg);
 }
 
 .philosophy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 40px); }
-.philosophy-card { background: rgba(255,255,255,0.015); padding: clamp(36px, 4vw, 60px); transition: background 0.6s var(--ease), border-color 0.6s; border: 1px solid rgba(255,255,255,0.03); }
-.philosophy-card:hover { background: rgba(255,255,255,0.025); border-color: rgba(255,255,255,0.06); }
+.philosophy-card { background: var(--bg-card); padding: clamp(36px, 4vw, 60px); transition: all 0.4s var(--ease); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); border-radius: 12px; }
+.philosophy-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
 .card-number { font-family: var(--font-serif); font-size: 1.3rem; color: var(--accent); opacity: 1; font-weight: 500; letter-spacing: 0.12em; margin-bottom: 28px; }
 .card-line { width: 32px; height: 1px; background: linear-gradient(to left, var(--accent), var(--accent-light)); margin-bottom: 28px; opacity: 0.45; box-shadow: 0 0 8px rgba(0, 194, 168, 0.08); transition: width 0.6s var(--ease), opacity 0.6s, box-shadow 0.6s; }
 .philosophy-card:hover .card-line { width: 48px; opacity: 0.7; box-shadow: 0 0 12px rgba(0, 194, 168, 0.12); }
@@ -777,9 +773,7 @@ body.modal-open { overflow: hidden; }
 
 /* ===================== SERVICES ===================== */
 .services {
-    background:
-        radial-gradient(ellipse 40% 45% at 20% 85%, rgba(255,255,255,0.025) 0%, transparent 55%),
-        linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);
+    background: var(--bg-elevated);
 }
 
 .services-list { display: flex; flex-direction: column; }
@@ -797,16 +791,14 @@ body.modal-open { overflow: hidden; }
 
 /* ===================== TESTIMONIALS ===================== */
 .results {
-    background:
-        radial-gradient(ellipse 55% 50% at 50% 25%, rgba(0, 194, 168, 0.03) 0%, transparent 60%),
-        linear-gradient(180deg, var(--bg-light) 0%, var(--bg-elevated) 100%);
+    background: var(--bg-deep);
 }
 
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 24px); align-items: stretch; max-width: 960px; margin: 0 auto; }
-.testimonial-card { background: rgba(255,255,255,0.02); padding: clamp(32px, 3.5vw, 44px) clamp(24px, 2.5vw, 36px); border: 2px solid rgba(0, 194, 168, 0.25); border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 0 24px rgba(0, 194, 168, 0.05); }
-.testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 0 32px rgba(0, 194, 168, 0.08); }
+.testimonial-card { background: var(--bg-card); padding: clamp(32px, 3.5vw, 44px) clamp(24px, 2.5vw, 36px); border: 1px solid var(--border-subtle); border-radius: 14px; display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: var(--shadow-card); transition: all 0.4s var(--ease); }
+.testimonial-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
 .testimonial-card:nth-child(2) { margin-top: 0; }
-.testimonial-featured { border-color: rgba(0, 194, 168, 0.3); background: rgba(255,255,255,0.03); }
+.testimonial-featured { border-color: var(--border); }
 .testimonial-quote { font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent); line-height: 1; margin-bottom: 14px; opacity: 0.25; font-style: italic; text-align: center; }
 .testimonial-text { color: var(--text-high); font-size: 0.86rem; line-height: 1.9; margin-bottom: auto; padding-bottom: 20px; font-weight: 300; text-align: center; opacity: 0.85; }
 .testimonial-author { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 16px; }
@@ -822,13 +814,12 @@ body.modal-open { overflow: hidden; }
     text-align: center;
     overflow: hidden;
     padding: clamp(120px, 16vw, 240px) 0;
-    background: var(--bg-deep);
+    background: var(--bg-light);
 }
 
 .cta-bg { position: absolute; inset: 0; }
-.cta-gradient { position: absolute; inset: 0; background: radial-gradient(ellipse 45% 55% at 50% 50%, rgba(0, 194, 168, 0.055) 0%, transparent 60%); }
-.cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 45%); pointer-events: none; animation: ctaBreathe 12s ease-in-out infinite; }
-@keyframes ctaBreathe { 0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); } }
+.cta-gradient { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0, 194, 168, 0.04) 0%, transparent 65%); }
+.cta-glow { display: none; }
 
 .cta-content { position: relative; }
 .cta-title { font-family: var(--font-hebrew); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 300; line-height: 1.2; margin-bottom: 28px; }
@@ -837,9 +828,7 @@ body.modal-open { overflow: hidden; }
 
 /* ===================== CONTACT ===================== */
 .contact {
-    background:
-        radial-gradient(ellipse 40% 45% at 65% 25%, rgba(255,255,255,0.02) 0%, transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    background: var(--bg-elevated);
 }
 
 .contact-center {
@@ -946,7 +935,7 @@ body.modal-open { overflow: hidden; }
 
 
 /* ===================== FOOTER ===================== */
-.footer { border-top: 1px solid rgba(255,255,255,0.03); padding: 36px 0; background: var(--bg-deep); }
+.footer { border-top: 1px solid var(--border-subtle); padding: 36px 0; background: var(--bg); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; }
 .footer-brand { display: flex; align-items: center; gap: 14px; }
 .footer-logo { font-family: var(--font-serif); font-size: 1rem; color: var(--accent); letter-spacing: 0.18em; opacity: 0.7; }
