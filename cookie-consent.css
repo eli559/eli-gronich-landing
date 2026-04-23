@@ -8,8 +8,8 @@
     left: 0;
     right: 0;
     z-index: 99999;
-    background: #111;
-    border-top: 1px solid rgba(212, 168, 67, 0.15);
+    background: #0B1220;
+    border-top: 1px solid rgba(0, 194, 168, 0.15);
     box-shadow: 0 -4px 30px rgba(0,0,0,0.5);
     animation: ccSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -55,15 +55,15 @@
 
 .cc-link {
     font-size: 0.72rem;
-    color: #D4A843;
+    color: #00C2A8;
     text-decoration: none;
-    border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+    border-bottom: 1px solid rgba(0, 194, 168, 0.2);
     transition: border-color 0.3s;
     margin-top: 6px;
     display: inline-block;
 }
 
-.cc-link:hover { border-color: #D4A843; }
+.cc-link:hover { border-color: #00C2A8; }
 
 .cc-actions {
     display: flex;
@@ -85,11 +85,11 @@
 }
 
 .cc-btn--accept {
-    background: #D4A843;
-    color: #111;
+    background: #00C2A8;
+    color: #0B1220;
 }
 
-.cc-btn--accept:hover { background: #E4C16A; }
+.cc-btn--accept:hover { background: #009E8E; }
 
 .cc-btn--reject {
     background: transparent;
@@ -161,7 +161,7 @@
     appearance: none;
     width: 40px;
     height: 22px;
-    background: #333;
+    background: #1C2538;
     border-radius: 11px;
     position: relative;
     cursor: pointer;
@@ -182,18 +182,18 @@
     transition: all 0.3s;
 }
 
-.cc-toggle:checked { background: #D4A843; }
-.cc-toggle:checked::before { right: 21px; background: #111; }
+.cc-toggle:checked { background: #00C2A8; }
+.cc-toggle:checked::before { right: 21px; background: #0B1220; }
 .cc-toggle:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .cc-btn--save {
-    background: #D4A843;
-    color: #111;
+    background: #00C2A8;
+    color: #0B1220;
     margin-top: 16px;
     width: 100%;
 }
 
-.cc-btn--save:hover { background: #E4C16A; }
+.cc-btn--save:hover { background: #009E8E; }
 
 /* Mobile */
 @media (max-width: 600px) {
