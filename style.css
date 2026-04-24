@@ -477,12 +477,13 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     z-index: 3;
     font-size: 0.52rem;
     letter-spacing: 0.22em;
-    color: rgba(255,255,255,0.6);
-    background: rgba(240, 244, 248, 0.35);
+    color: #FFFFFF;
+    background: rgba(0, 194, 168, 0.75);
     backdrop-filter: blur(6px);
-    padding: 3px 11px;
-    border-radius: 4px;
-    font-weight: 300;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.6rem;
 }
 
 .my-transform-stats {
