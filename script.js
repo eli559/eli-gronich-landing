@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(hidePreloader, 2400);
 
 
-/* ---------- Navigation ---------- */
+    /* ---------- Marquee Infinite ---------- */
+    const mq = document.getElementById('marqueeContent');
+    if (mq) { const c = mq.innerHTML; mq.innerHTML = c + c + c; }
+
+
+    /* ---------- Navigation ---------- */
     const nav = document.getElementById('nav');
 
     window.addEventListener('scroll', () => {
