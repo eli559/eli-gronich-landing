@@ -458,25 +458,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     background: radial-gradient(ellipse 95% 90% at 50% 45%, transparent 55%, var(--bg-elevated) 100%);
 }
 
-.my-transform-before {
-    overflow: hidden;
-}
-
-.my-transform-before img {
-    filter: saturate(0.4) contrast(0.9) brightness(0.95);
-}
-
-/* Brand tint overlay on "before" */
-.my-transform-before::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 194, 168, 0.1);
-    mix-blend-mode: color;
-    pointer-events: none;
-    z-index: 1;
-    border-radius: inherit;
-}
+.my-transform-before {}
+.my-transform-before::after { display: none; }
 .my-transform-after {}
 
 .my-transform-tag {
