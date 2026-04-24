@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- Mobile: Auto-reveal hover states on scroll ---------- */
     if (!window.matchMedia('(hover: hover)').matches) {
-        const hoverEls = document.querySelectorAll('.testimonial-card, .philosophy-card, .service-item');
+        const hoverEls = document.querySelectorAll('.testimonial-card, .philosophy-card, .service-item, .video-card, .ba-train-card');
         const hoverObs = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

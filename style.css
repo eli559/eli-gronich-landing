@@ -1040,27 +1040,31 @@ body.a11y-readable * { font-family: inherit !important; }
 
 
 /* ===================== TOUCH ACTIVE STATE (scroll reveal) ===================== */
-.testimonial-card.touch-active { border-color: rgba(0, 194, 168, 0.25); box-shadow: 0 0 24px rgba(0, 194, 168, 0.05); }
-.philosophy-card.touch-active { background: rgba(255,255,255,0.025); border-color: rgba(255,255,255,0.06); }
-.philosophy-card.touch-active .card-line { width: 40px; opacity: 0.5; }
-.service-item.touch-active { background: rgba(255,255,255,0.015); }
+.testimonial-card.touch-active { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+.philosophy-card.touch-active { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+.philosophy-card.touch-active .card-line { width: 40px; opacity: 0.7; }
+.service-item.touch-active { background: var(--bg-warm); }
+.video-card.touch-active { transform: scale(1.02); }
+.video-card.touch-active .video-wrap { border-color: rgba(0, 194, 168, 0.2); box-shadow: var(--shadow-card-hover); }
+.ba-train-card.touch-active { transform: scale(1.01); }
+.ba-train-card.touch-active .ba-train-img { border-color: rgba(0, 194, 168, 0.2); }
 
 
 /* ===================== TOUCH / MOBILE — HOVER FALLBACKS ===================== */
 @media (hover: none), (pointer: coarse) {
-    /* Show all hover states permanently on touch devices */
-    .testimonial-card { border-color: rgba(0, 194, 168, 0.25); }
-    .testimonial-featured { border-color: rgba(0, 194, 168, 0.3); }
-    .philosophy-card { background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05); }
-    .philosophy-card .card-line { width: 40px; opacity: 0.5; }
-    .service-item { background: rgba(255,255,255,0.01); }
-    .transform-card { background: var(--bg-card); }
-    .contact-ig-link { border-color: rgba(0, 194, 168, 0.15); }
-    .footer-icon { border-color: rgba(255,255,255,0.08); }
+    /* Cards — permanent subtle active state */
+    .testimonial-card { box-shadow: var(--shadow-card); }
+    .philosophy-card { box-shadow: var(--shadow-card); }
+    .service-item { border-color: var(--border-subtle); }
+    .video-wrap { border-color: rgba(0, 194, 168, 0.12); }
+    .ba-train-img { border-color: rgba(0, 194, 168, 0.12); }
 
-    /* Disable heavy animations for performance */
-    .btn-primary { animation: none; }
-    body::after { opacity: 0.15; }
+    /* CTA — permanent glow, no animation */
+    .btn-primary { box-shadow: 0 4px 16px rgba(0, 194, 168, 0.2); }
+    .contact-cta--wa { box-shadow: 0 4px 16px rgba(0, 194, 168, 0.2); }
+
+    /* Footer icons visible */
+    .footer-icon { border-color: var(--border-subtle); }
 
     /* Tap targets — minimum 44px */
     .nav-toggle { min-width: 44px; min-height: 44px; }
