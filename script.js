@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- Marquee Infinite ---------- */
     const mq = document.getElementById('marqueeContent');
-    if (mq) { const c = mq.innerHTML; mq.innerHTML = c + c + c; }
+    if (mq) { const c = mq.innerHTML; mq.innerHTML = c + c; }
 
 
     /* ---------- Navigation ---------- */
