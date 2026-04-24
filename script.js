@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(hidePreloader, 2400);
 
 
-    /* ---------- Marquee Infinite ---------- */
-    const mq = document.getElementById('marqueeContent');
-    if (mq) { const c = mq.innerHTML; mq.innerHTML = c + c; }
 
 
     /* ---------- Navigation ---------- */
