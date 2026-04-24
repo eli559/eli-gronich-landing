@@ -277,7 +277,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 .marquee-section { border: none; padding: 32px 0; overflow: hidden; background: var(--bg-deep); position: relative; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
-.marquee-track { display: flex; width: fit-content; animation: marquee 45s linear infinite; }
+.marquee-track { display: flex; width: fit-content; animation: marquee 120s linear infinite; }
 .marquee-content { display: flex; align-items: center; gap: 44px; padding-left: 44px; white-space: nowrap; font-family: var(--font-hebrew); font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.06em; font-weight: 500; }
 .marquee-content span:not(.marquee-dot):nth-child(4n+1) { color: var(--accent); font-weight: 600; }
 .marquee-content span:not(.marquee-dot):nth-child(6n+3) { color: var(--text); font-weight: 600; }
