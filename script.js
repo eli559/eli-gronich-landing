@@ -233,6 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    /* ---------- Cookie Settings Button ---------- */
+    const cookieBtn = document.getElementById('openCookieBtn');
+    if (cookieBtn) {
+        cookieBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (typeof openCookieSettings === 'function') openCookieSettings();
+        });
+    }
+
     /* ---------- Active Nav Link ---------- */
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link:not(.nav-link-cta)');
