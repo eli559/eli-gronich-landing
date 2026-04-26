@@ -161,3 +161,44 @@ document.addEventListener('visibilitychange', function() {
 });
 
 window.addEventListener('beforeunload', sendTimeOnPage);
+
+// ── Error Tracking Patch ──
+// Captures JS errors and sends to dashboard
+;(function() {
+  var sent = {};
+  function sendError(msg, stack, unhandled) {
+    var key = msg + '|' + window.location.pathname;
+    if (sent[key]) return;
+    sent[key] = true;
+    try {
+      fetch(TRACKING_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          apiKey: TRACKING_API_KEY,
+          eventName: 'js_error',
+          sessionId: sessionStorage.getItem('_t_sid') || 'unknown',
+          page: window.location.pathname,
+          value: null,
+          metadata: {
+            message: (msg || '').substring(0, 500),
+            stack: (stack || '').substring(0, 2000),
+            unhandled: !!unhandled,
+            ua: navigator.userAgent.substring(0, 200)
+          }
+        }),
+        keepalive: true
+      }).catch(function(){});
+    } catch(e) {}
+  }
+
+  window.onerror = function(msg, src, line, col, err) {
+    sendError(String(msg), err && err.stack ? err.stack : src + ':' + line + ':' + col, false);
+  };
+
+  window.addEventListener('unhandledrejection', function(e) {
+    var msg = e.reason ? (e.reason.message || String(e.reason)) : 'Unhandled Promise Rejection';
+    var stack = e.reason && e.reason.stack ? e.reason.stack : '';
+    sendError(msg, stack, true);
+  });
+})();
